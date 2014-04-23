@@ -17,4 +17,4 @@ Voici la liste des choses à faire pour le rapport. N'hésitez pas à l'éditer 
 - Ecrire l'abstract-en (Tibo);
 - Paufiner/relire/perfectionner tout.
 
-Ce serait bien que le rapport soit vraiment parfait, puisque le baffle risque de pas marcher hyper bien!
+Ce serait bien que le rapport soit vraiment parfait, puisque le baffle marche pas
