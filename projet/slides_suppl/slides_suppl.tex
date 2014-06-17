@@ -81,6 +81,7 @@
 \item  Cahier des Charges;
 \item  Gain amplificateur
 \item  Vue d'ensemble du circuit
+\item  Bande passante
 \end{itemize}
 \end{frame}
 %------------------------------------------------------
@@ -343,5 +344,47 @@ Pour réduire le gain $A$ à $1$, deux possibilités:
     \includegraphics[scale=0.4]{plaquette.png}
 \end{figure}
 \end{frame}
+
+%------------------------------------
+\begin{frame}{Bande passante}
+\begin{figure}[ht]
+\minipage{0.4\textwidth}
+\begin{figure}[ht!]
+\centering
+\begin{tikzpicture}[scale=0.5]
+\begin{axis}[
+xmin=0,xmax=2000,
+ymin=0,ymax=1.2,
+axis x line=middle,
+axis y line=middle,
+axis line style=->,
+xlabel={$f$},
+ylabel={$V_{out} / V_{in}$},
+legend entries = {passe-bande, fréq. coupure 1, fréq. coupure 2}
+]
+
+\addplot[no marks,red,-] expression[domain=0:2000,samples=100]
+{(((2*3.14*x*10000*0.00000047)*(1 + (2*3.14*x*10000*0.00000047)^2)^(-0.5))*
+((1 + (2*3.14*x*500*0.00000047)^2)^(-0.5)))};
+\addplot[no marks, gray] coordinates
+{(33.86,0) (33.86,1.1)};
+\addplot[no marks, gray] coordinates
+{(677.26,0) (677.26,1.1)};
+\end{axis}
+\end{tikzpicture}
+\caption{Graphe du gain d'un filtre passe-bande}
+\label{pbf_ratio}
+\end{figure}
+\endminipage\hfill
+\minipage{0.4\textwidth}
+Pour avoir la plus grande bande passante, il faut donc :
+$$f_1 < f_2$$
+$$ \Rightarrow \frac{1}{2\pi R_1C} < \frac{1}{2\pi R_2C} $$
+$$\Rightarrow R_2 < R_1$$
+\endminipage\hfill
+\end{figure}
+\end{frame}
+
+
 
 \end{document}
